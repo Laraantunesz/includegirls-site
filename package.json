@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@govbr-ds/core": "^3.7.0",
+    "@govbr-ds/webcomponents": "^2.6.0"
+  }
+}
