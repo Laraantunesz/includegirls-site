@@ -8,7 +8,13 @@ Siga os passos abaixo para baixar o repositório na sua máquina e visualizar o 
 * [Git](https://git-scm.com/) instalado no computador.
 * [Visual Studio Code](https://code.visualstudio.com/) (recomendado).
 * Extensão **Live Server** instalada no VS Code (opcional, mas recomendada visualizar o site no decorrer do desenvolvimento).
-
+* Node.js : 
+    - Baixe a versão recomendada **LTS** (Long Term Support).
+    - Execute o instalador baixado e avance clicando em **Next** até concluir (as configurações padrão são suficientes).
+    - Para confirmar que a instalação deu certo, abra o terminal (Prompt de Comando, PowerShell ou Git Bash) e digite:
+      ```bash
+      node -v
+      npm -v  
 ---
 
 ### 1. Clonar o repositório
@@ -19,6 +25,11 @@ Abra o terminal (Git Bash no Windows ou terminal padrão no Linux/macOS), navegu
 # Clone o repositório
 git clone https://github.com/Laraantunesz/includegirls-site.git
 ```
+No terminal, dentro da pasta do projeto, execute o comando para baixar os componentes visuais:
+   ```bash
+   npm install
+   ```
+   > **Nota:** Esse comando criará a pasta `node_modules/` localmente com todos os estilos e Web Components do Gov.br.
 ## 📁 Estrutura de Diretórios e Arquivos
 
      📦 includegirls-site/
