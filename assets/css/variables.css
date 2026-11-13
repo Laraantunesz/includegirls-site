@@ -1,0 +1,16 @@
+:root {
+  /* Paleta de Cores Oficial - Include Girls */
+    --include-roxo-escuro: #493364; /* Cor principal */
+    --include-magenta: #D4145A;
+    --include-laranja: #F87048;
+    --include-cinza-claro: #D7D6D2;
+    --include-preto: #1A1A1A;
+    --include-salmao: #F2897C;
+    --include-rosa-claro: #F981E7;
+
+    /* Cores Padrão Gov.br (para a Barra Brasil) */
+    --govbr-blue: #1351b4;
+    --govbr-blue-dark: #002244;
+    --govbr-border: #e0e0e0;
+    --govbr-white:#ffffff
+    }

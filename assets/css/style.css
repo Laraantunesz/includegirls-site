@@ -1,0 +1,295 @@
+@import url('./variables.css');
+
+body {
+  background-color: #ffffff;
+  color: var(--include-preto);
+  margin: 0;
+  /* O manual determina Arial como tipografia secundária para textos institucionais */
+  font-family: Arial, Helvetica, sans-serif; 
+}
+
+/* Cabeçalho do Gov */
+.barra-brasil {
+  background: var(--govbr-white);
+  color: #ffffff;
+  display: flex;
+  border-bottom: 1px solid #eeeeee;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 28px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: 'Rawline', sans-serif; 
+}
+
+.barra-brasil a {
+  color: var(--govbr-blue);
+  text-decoration: none;
+  margin-left: 16px;
+}
+
+.logo-gov img {
+  height: 20px; 
+  display: block;
+}
+/* Container dos links superiores */
+.links-gov {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.links-gov a {
+  color: var(--govbr-blue);
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease; 
+}
+
+.links-gov .separador {
+  color: var(--govbr-blue); 
+  font-size: 11px;
+  transition: all 0.3s ease;
+}
+.links-gov:hover a,
+.links-gov:hover .separador {
+  opacity: 0.3;
+}
+
+/* o link que está EXATAMENTE sob o cursor volta a ficar forte e mais escuro */
+.links-gov a:hover {
+  opacity: 1;
+  color: var(--govbr-blue);
+}
+/* 2. Cabeçalho do Include*/
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 32px;
+  border-bottom: 1px solid var(--govbr-border);
+  box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+}
+
+/* Ajuste para receber a imagem do logotipo respeitando a área de proteção */
+.header-logo img {
+  height: 48px; 
+  padding: 4px; /* Auxilia na área de proteção ao redor do logo */
+}
+
+/* Configuração do Bloco de Acessibilidade */
+.header-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.acessibilidade-titulo {
+  font-size: 14px;
+  color: var(--govbr-blue); 
+  font-weight: 500;
+  margin-right: 8px;
+}
+
+.acessibilidade-botoes {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.acessibilidade-botoes .br-button {
+  color: var(--govbr-blue);
+  font-weight: 500;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  width: 32px;
+  height: 32px;
+}
+
+.acessibilidade-botoes .icone-contraste i {
+  font-size: 18px; 
+}
+
+/* 3. Área Central */
+.main-content {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 32px 16px 64px 16px;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--include-preto);
+  margin: 24px 0 32px 0;
+}
+
+.menu-secundario {
+  display: flex;
+  justify-content: center; 
+  flex-wrap: wrap; 
+  gap: 46px; /* Espaço entre os botões */
+ 
+  margin-bottom: 40px; /* Afasta o menu do título que vem a seguir */
+  padding-top: 16px;
+}
+
+.botao-delineado {
+  display: inline-block;
+  padding: 6px 20px;
+  color: var(--include-roxo-escuro); 
+  background-color: #ffffff; /* Fundo branco */
+  border: 1px solid var(--include-roxo-escuro); /* Borda fina azul escura */
+    border-radius: 8px; 
+    font-size: 16px;
+    text-decoration:none!important;
+    transition: all 0.2s ease; 
+}
+
+/* Efeito ao passar o rato (Hover) */
+.botao-delineado:hover {
+  background-color: var(--include-roxo-escuro);
+  color: #ffffff;
+  text-decoration:none!important;
+}
+
+/* Botão Central com o Roxo  */
+.btn-conheca {
+  margin-top: 48px;
+}
+
+.btn-conheca br-button::part(button) {
+  background-color: var(--include-roxo-escuro) !important;
+  border-color: var(--include-roxo-escuro) !important;
+  border-radius: 999px !important;
+  padding: 12px 36px !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+  color: #ffffff !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+/* Hover do botão */
+.btn-conheca br-button::part(button):hover {
+  background-color: var(--include-magenta) !important;
+  border-color: var(--include-magenta) !important;
+}
+
+/* Rodapé */
+.footer-site {
+  border-top: 1px solid var(--govbr-border);
+  padding: 48px 32px 24px 32px;
+  background-color: #ffffff;
+  font-size: 13px;
+}
+
+.footer-logo-gov {
+  max-width: 1100px;
+  margin: 0 auto 12px auto; /* Margem inferior para afastar a logo das colunas */
+}
+
+.footer-logo-gov img {
+  height: 36px;
+}
+
+/* Divide o espaço em 3 colunas iguais */
+.footer-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 32px;
+  text-align: left;
+}
+
+.footer-col h4 {
+  font-size: 14px;
+  font-weight: bold;
+  color:var(--include-preto); /* Título em branco */
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+
+.footer-col ul li a {
+  color: var(--include-preto); /* Cor do link */
+  text-decoration: none !important;
+}
+
+.footer-col ul li a:hover {
+  text-decoration: none !important;
+  color:var(--include-roxo-escuro)
+}
+
+.footer-bottom {
+  max-width: 1100px;
+  margin: 40px auto 0 auto;
+  display: flex;
+  justify-content: space-between; /* Empurra as redes para a esquerda e as logos para a direita */
+  align-items: flex-end; /* Alinha todos os elementos pela base */
+  flex-wrap: wrap;
+  gap: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--include-cinza-claro);
+}
+
+.footer-parceiros {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    
+}
+.footer-parceiros img {
+  height: 36px; 
+  width: auto;
+  object-fit: contain; 
+}
+.footer-redes-sociais {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.titulo-redes {
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--include-preto);
+  margin: 0;
+  text-transform: uppercase;
+}
+.redes-icones {
+  display: flex;
+  gap: 10px;
+}
+
+/* Estilo dos ícones circulares */
+.redes-icones a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--include-cinza-claro); /* Fundo do círculo */
+  color: #ffffff; /* Cor do ícone */
+  text-decoration: none;
+  font-size: 18px;
+  transition: opacity 0.2s ease;
+}
+
+.redes-icones a:hover {
+  opacity: 0.8;
+}
+/*remove efeito hover onde é desnecessario*/
+.barra-brasil a:hover,
+.header-logo a:hover,
+.acessibilidade-botoes .br-button:hover,
+.footer-col ul li a:hover,
+.footer-logo-gov a:hover {
+  background-image: none !important;
+  background-color: transparent !important;
+}

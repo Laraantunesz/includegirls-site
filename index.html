@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>#include&lt;girls&gt; | FACOM UFU</title>
+
+  <!-- Tipografia Rawline mantida apenas para os Web Components do GovBR-DS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rawline:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- CSS Base do GovBR-DS -->
+  <link rel="stylesheet" href="./node_modules/@govbr-ds/core/dist/core.min.css">
+
+  <!-- CSS Customizado (Estruturado na pasta assets/css) -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+  <!-- 1. BARRA BRASIL (GOV.BR) -->
+  <header class="barra-brasil">
+    <div class="logo-gov">
+    <a href="https://www.gov.br" target="_blank" title="Acessar portal gov.br" >
+      <img src="./assets/img/logos/gov-br.png" alt="gov.br" style="height: 24px;">
+    </a>
+  </div>
+    <nav class="links-gov" aria-label="Acesso rápido gov.br">
+      <a href="https://www.gov.br/pt-br/orgaos-do-governo" target="_blank">ÓRGÃOS DO GOVERNO</a>
+      <span class="separador">|</span>
+      <a href="https://www.gov.br/acessoainformacao/pt-br" target="_blank">ACESSO À INFORMAÇÃO</a>
+      <span class="separador">|</span>
+      <a href="https://www.gov.br/governodigital/pt-br/legislacao" target="_blank">LEGISLAÇÃO</a>
+    </nav>
+  </header>
+
+  <!-- 2. CABEÇALHO DO PROJETO -->
+  <div class="header-container">
+    <div class="header-logo">
+      <a href="./index.html">
+        <img src="./assets/img/logos-include/include-completo-roxo.svg" alt="Logotipo Oficial do Projeto Include Girls" style="height: 48px;">
+      </a>
+    </div>
+
+    <!-- Controles de Acessibilidade -->
+    <div class="header-actions">
+      <div class="acessibilidade-titulo">Acessibilidade</div>
+      <div class="acessibilidade-botoes">
+        <button type="button" class="br-button circle small" aria-label="Diminuir fonte">A-</button>
+        <button type="button" class="br-button circle small" aria-label="Fonte normal">A</button>
+        <button type="button" class="br-button circle small" aria-label="Aumentar fonte">A+</button>
+        <button type="button" class="br-button circle small icone-contraste" aria-label="Alto contraste">
+          <i class="fas fa-adjust" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="main-content">
+<!-- Menu de Navegação Secundário -->
+    <nav class="menu-secundario" aria-label="Navegação secundária">
+      <a href="./pages/sobre.html" class="botao-delineado">Sobre</a>
+      <a href="./pages/projetos.html" class="botao-delineado">Projetos</a>
+      <a href="./pages/publicacoes.html" class="botao-delineado">Publicações</a>
+      <a href="./pages/premiacoes.html" class="botao-delineado">Premiações</a>
+      <a href="./pages/material.html" class="botao-delineado">Material</a>
+      <a href="./pages/eventos.html" class="botao-delineado">Eventos</a>
+    </nav>
+
+    <!-- BOTÃO CONHEÇA O PROJETO -->
+    <div class="btn-conheca">
+      <br-button id="btn-conheca" emphasis="primary">
+        Conheça o Projeto!
+      </br-button>
+    </div>
+
+  </main>
+
+  <!-- 3. RODAPÉ INSTITUCIONAL (FOOTER) -->
+
+  <footer class="footer-site">
+    
+    <!-- Logo gov.br superior do rodapé -->
+    <div class="footer-logo-gov">
+      <a href="https://www.gov.br" target="_blank" title="Acessar portal gov.br">
+        <!-- Usa a versão branca da logo para fundo escuro -->
+        <img src="./assets/img/logos/gov-br.png" alt="gov.br">
+      </a>
+    </div>
+
+    <!-- Grade de Links em 3 Colunas -->
+    <div class="footer-grid">
+      
+      <!-- Coluna 1: Navegação Principal -->
+      <div class="footer-col">
+        <h4>O PROJETO</h4>
+        <ul>
+          <li><a href="./index.html">Início</a></li>
+          <li><a href="./pages/sobre.html">Sobre Nós</a></li>
+          <li><a href="./pages/projetos.html">Nossos Projetos</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 2: Acervo e Atividades -->
+      <div class="footer-col">
+        <h4>CONTEÚDO E AÇÕES</h4>
+        <ul>
+          <li><a href="./pages/eventos.html">Eventos</a></li>
+          <li><a href="./pages/material.html">Materiais</a></li>
+          <li><a href="./pages/publicacoes.html">Publicações</a></li>
+          <li><a href="./pages/premiacoes.html">Premiações</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 3: Vínculos Externos -->
+      <div class="footer-col">
+        <h4>INSTITUCIONAL</h4>
+        <ul>
+          <li><a href="https://facom.ufu.br/" target="_blank">FACOM - UFU</a></li>
+          <li><a href="https://ufu.br/" target="_blank">Universidade Federal de Uberlândia</a></li>
+          <li><a href="https://www.gov.br/acessoainformacao/pt-br" target="_blank">Acesso à Informação</a></li>
+        </ul>
+      </div>
+      
+    </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-redes-sociais">
+        <p class="titulo-redes">REDES SOCIAIS</p>
+        <div class="redes-icones">
+          <!-- A Font Awesome 5 utiliza 'fa-twitter' para o antigo logo do Twitter/X -->
+          <a href="#" aria-label="X (Twitter)"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-parceiros">
+        
+        <!-- Logos da FACOM e UFU -->
+        <a href="https://facom.ufu.br/" target="_blank" title="Acessar site da FACOM" >
+          <img src="./assets/img/logos/facom-azul.png" alt="FACOM" style="height: 30px; margin-right: 16px;">
+        </a>
+        <a href="https://ufu.br/" target="_blank" title="Acessar portal ufu.br"><img src="./assets/img/logos/ufu_blue.svg" alt="UFU" style="height: 30px;">
+        </a>
+        <a href="https://meninas.sbc.org.br/" target="_blank" title="Acessar site meninas digitais"><img src="./assets/img/logos/meninasDigitaisLogo.png" alt="FACOM" style="height: 60px; margin-right: 16px;">
+        </a>
+      </div>
+      <!--<div>
+        <a href="https://www.gov.br/acessoainformacao/pt-br" target="_blank" style="text-decoration: none;">
+          Logo oficial do Acesso à Informação em SVG 
+          <img src="./assets/img/logos/acesso-informacao.svg" alt="Acesso à Informação" style="height: 32px;">
+        </a>
+      </div>-->
+      
+    </div>
+  </footer>
+
+  <!-- Web Components oficiais do GovBR-DS -->
+  <script type="module" src="./node_modules/@govbr-ds/webcomponents/dist/webcomponents/webcomponents.esm.js"></script>
+
+  <!-- Script da aplicação apontando para assets/js/main.js -->
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
