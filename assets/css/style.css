@@ -524,6 +524,174 @@ body {
   transform: scale(1.2);
 }
 
+/* =========================================================
+   4. QUADRO: COMPOSIÇÃO FEMININA DA FACOM (GOVBR-DS CARD)
+   ========================================================= */
+.composicao-section {
+  max-width: 960px;
+  margin: 0 auto 40px auto;
+}
+
+.br-card.composicao-card {
+  background-color: var(--surface-card-bg);
+  border: 1px solid var(--surface-card-border);
+  border-radius: var(--surface-card-radius);
+  box-shadow: var(--surface-card-shadow);
+  padding: 36px 40px 24px 40px;
+  margin: 0;
+  font-family: var(--font-family-base);
+}
+
+.br-card.composicao-card .card-header {
+  padding: 0;
+  margin-bottom: 32px;
+  border-bottom: none;
+  background: transparent;
+}
+
+.composicao-titulo {
+  font-family: 'Rawline', Arial, Helvetica, sans-serif;
+  font-size: 45px;
+  font-weight: 700;
+  color: var(--include-roxo-escuro);
+  margin: 0;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.br-card.composicao-card .card-content {
+  padding: 0;
+}
+
+/* Linha de Indicadores (Docência | Ícone Central | Discência) */
+.composicao-indicadores {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 28px;
+  margin-bottom: 44px;
+}
+
+.indicador-bloco {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  padding-bottom: 18px;
+}
+
+.indicador-rotulo {
+  font-family: 'Rawline', Arial, Helvetica, sans-serif;
+  font-size: 45px;
+  font-weight: 700;
+  color: var(--include-roxo-escuro);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.indicador-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.indicador-ondas {
+  height: 45px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.indicador-valor {
+  font-family: 'Rawline', Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--include-preto);
+  line-height: 1;
+}
+
+.indicador-centro {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.indicador-meio-img {
+  height: 100px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  transform: translateY(50px);
+}
+
+/* Bloco do Subtítulo e Gráfico */
+.composicao-grafico-bloco {
+  max-width: 720px;
+  margin: 0 auto 28px auto;
+  text-align: center;
+  transform: translateY(10px);
+}
+
+.composicao-subtitulo {
+  font-family: 'Rawline', Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--include-preto);
+  margin: 0 0 12px 0;
+  line-height: 1.25;
+}
+
+.composicao-figura {
+  margin: 0;
+  width: 100%;
+}
+
+.composicao-grafico-img {
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Rodapé do Quadro */
+.br-card.composicao-card .card-footer.composicao-rodape {
+  padding: 8px 0 0 0;
+  margin: 0;
+  border-top: none;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--include-preto);
+}
+
+.composicao-link-materiais,
+.composicao-fonte {
+  margin: 0;
+}
+
+.composicao-link-materiais a,
+.composicao-fonte a {
+  color: var(--include-preto);
+  font-style: italic;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.composicao-link-materiais a:hover,
+.composicao-fonte a:hover {
+  color: var(--include-roxo-escuro);
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
 /* Botão Central com o Roxo */
 .btn-conheca {
   margin-top: 32px;
@@ -677,8 +845,10 @@ body {
   .header-container {
     padding: 8px 16px;
   }
+
   .include-carousel {
-    height: 340px; }
+    height: 340px;
+  }
 
   .carousel-slide-item {
     height: 340px;
@@ -694,6 +864,53 @@ body {
 
   .carousel-slide-overlay {
     padding: 20px 20px 42px 20px;
+  }
+
+  .br-card.composicao-card {
+    padding: 24px 16px 20px 16px;
+  }
+
+  .composicao-titulo {
+    font-size: 24px;
+  }
+
+  .composicao-indicadores {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+
+  .indicador-bloco {
+    padding-bottom: 0;
+    gap: 12px;
+  }
+
+  .indicador-rotulo {
+    font-size: 22px;
+  }
+
+  .indicador-ondas {
+    height: 50px;
+  }
+
+  .indicador-valor {
+    font-size: 32px;
+  }
+
+  .indicador-meio-img {
+    height: 84px;
+  }
+
+  .composicao-subtitulo {
+    font-size: 22px;
+  }
+
+  .br-card.composicao-card .card-footer.composicao-rodape {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
   }
 
   .footer-grid {
