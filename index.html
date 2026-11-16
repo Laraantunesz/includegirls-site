@@ -20,10 +20,10 @@
   <!-- 1. BARRA BRASIL (GOV.BR) -->
   <header class="barra-brasil">
     <div class="logo-gov">
-    <a href="https://www.gov.br" target="_blank" title="Acessar portal gov.br" >
-      <img src="./assets/img/logos/gov-br.png" alt="gov.br" style="height: 24px;">
-    </a>
-  </div>
+      <a href="https://www.gov.br" target="_blank" title="Acessar portal gov.br">
+        <img src="./assets/img/logos/gov-br.png" alt="gov.br" style="height: 24px;">
+      </a>
+    </div>
     <nav class="links-gov" aria-label="Acesso rápido gov.br">
       <a href="https://www.gov.br/pt-br/orgaos-do-governo" target="_blank">ÓRGÃOS DO GOVERNO</a>
       <span class="separador">|</span>
@@ -33,12 +33,27 @@
     </nav>
   </header>
 
-  <!-- 2. CABEÇALHO DO PROJETO -->
+  <!-- ===================================================================
+        CABEÇALHO + MENU LATERAL
+       =================================================================== -->
   <div class="header-container">
-    <div class="header-logo">
-      <a href="./index.html">
-        <img src="./assets/img/logos-include/include-completo-roxo.svg" alt="Logotipo Oficial do Projeto Include Girls" style="height: 48px;">
-      </a>
+    <div class="header-left">
+      <button
+        type="button"
+        class="br-button circle small btn-menu-trigger"
+        id="btn-abrir-menu"
+        aria-label="Abrir menu principal"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+
+      <div class="header-logo">
+        <a href="./index.html">
+          <img src="./assets/img/logos-include/include-completo-roxo.svg" alt="Logotipo Oficial do Projeto Include Girls" style="height: 48px;">
+        </a>
+      </div>
     </div>
 
     <!-- Controles de Acessibilidade -->
@@ -55,9 +70,88 @@
     </div>
   </div>
 
+  <!-- MENU LATERAL ESQUERDO -->
+  <div class="br-menu include-menu" id="main-navigation" aria-hidden="true">
+    <div class="menu-scrim" id="menu-scrim"></div>
+
+    <div class="menu-panel" role="dialog" aria-modal="true" aria-label="Menu de navegação principal">
+      <div>
+        <div class="menu-header">
+          <div class="menu-header-top">
+            <div class="menu-logo-box">
+              <img src="./assets/img/logos-include/include-completo-roxo.svg" alt="Logo #include<girls>">
+            </div>
+            <button type="button" class="menu-close-btn" id="btn-fechar-menu" aria-label="Fechar menu">
+              <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <div class="menu-instituicao">
+            <span class="titulo-ufu">Universidade Federal de Uberlândia</span>
+            <span class="subtitulo-facom">Faculdade de Computação</span>
+          </div>
+        </div>
+
+        <nav class="menu-body" aria-label="Menu lateral">
+          <ul class="menu-lista">
+            <li>
+              <a class="menu-item" href="./index.html">
+                <span class="icon"><i class="fas fa-home" aria-hidden="true"></i></span>
+                <span class="content">Início</span>
+              </a>
+            </li>
+            <li>
+              <a class="menu-item" href="./pages/projetos.html">
+                <span class="icon"><i class="fas fa-female" aria-hidden="true"></i></span>
+                <span class="content">Projetos</span>
+              </a>
+            </li>
+            <li>
+              <a class="menu-item" href="./pages/publicacoes.html">
+                <span class="icon"><i class="fas fa-file-alt" aria-hidden="true"></i></span>
+                <span class="content">Publicações</span>
+              </a>
+            </li>
+            <li>
+              <a class="menu-item" href="./pages/premiacoes.html">
+                <span class="icon"><i class="fas fa-trophy" aria-hidden="true"></i></span>
+                <span class="content">Premiações</span>
+              </a>
+            </li>
+            <li>
+              <a class="menu-item" href="./pages/material.html">
+                <span class="icon"><i class="fas fa-folder" aria-hidden="true"></i></span>
+                <span class="content">Material</span>
+              </a>
+            </li>
+            <li>
+              <a class="menu-item" href="./pages/sobre.html">
+                <span class="icon"><i class="fas fa-info-circle" aria-hidden="true"></i></span>
+                <span class="content">Sobre</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="menu-footer">
+        <p class="menu-footer-titulo">Redes Sociais</p>
+        <div class="menu-footer-redes">
+          <a href="https://www.instagram.com/includegirls.ufu/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.facebook.com/includegirls.ufu/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FIM DO PONTO 1 DE COLAGEM -->
+
   <!-- CONTEÚDO PRINCIPAL -->
   <main class="main-content">
-<!-- Menu de Navegação Secundário -->
+    <!-- Menu de Navegação Secundário -->
     <nav class="menu-secundario" aria-label="Navegação secundária">
       <a href="./pages/sobre.html" class="botao-delineado">Sobre</a>
       <a href="./pages/projetos.html" class="botao-delineado">Projetos</a>
@@ -67,31 +161,92 @@
       <a href="./pages/eventos.html" class="botao-delineado">Eventos</a>
     </nav>
 
+    <!-- ===================================================================
+         PONTO 2 DE COLAGEM: CARROSSEL DE FOTOS (COLE LOGO APÓS O </nav> ACIMA)
+         =================================================================== -->
+    <section class="carrossel-section" aria-label="Destaques do projeto">
+      <div class="include-carousel" id="include-carousel" role="region" aria-roledescription="carrossel" aria-label="Galeria de fotos do #include<girls>">
+
+        <!-- Seta Esquerda -->
+        <button type="button" class="carousel-button prev" id="carousel-prev" aria-label="Slide anterior">
+          <i class="fas fa-chevron-left" aria-hidden="true"></i>
+        </button>
+
+        <!-- Trilho de Fotos -->
+        <div class="carousel-stage" id="carousel-stage">
+
+          <!-- FOTO 1: INSIRA SUA FOTO NO src="" ABAIXO -->
+          <div class="carousel-page active" role="group" aria-roledescription="slide" aria-label="1 de 4">
+            <img src="./assets/img/carrossel/1_include_facomtechweek.jpg" alt="Equipe #include<girls> apresentando a nova identidade visual">
+            <div class="carousel-caption">
+              <h2 class="carousel-title">Nova identidade visual!</h2>
+              <p class="carousel-subtitle">O projeto #include &lt;girls&gt; apresenta sua nova imagem</p>
+            </div>
+          </div>
+
+          <!-- FOTO 2: INSIRA SUA FOTO NO src="" ABAIXO -->
+          <div class="carousel-page" role="group" aria-roledescription="slide" aria-label="2 de 4">
+            <img src="./assets/img/carrossel/2_SeloODS_2023_2.jpg" alt="Selo ODS 2023">
+            <div class="carousel-caption">
+              <h2 class="carousel-title">Projeto do #include&lt;girls&gt; recebe selos ODS</h2>
+              <p class="carousel-subtitle">“Pensamento Computacional para Alunas do Ensino Médio de Escola Pública” foi contemplado nas categorias ODS 5 e 10</p>
+            </div>
+          </div>
+
+
+          <div class="carousel-page" role="group" aria-roledescription="slide" aria-label="3 de 4">
+            <img src="./assets/img/carrossel/3_sarau.jpg" alt="Sarau Cultural">
+            <div class="carousel-caption">
+              <h2 class="carousel-title">Sarau Cultural realizado</h2>
+              <p class="carousel-subtitle">Veja as fotos e a integração promovida pelo evento!</p>
+            </div>
+          </div>
+
+
+          <div class="carousel-page" role="group" aria-roledescription="slide" aria-label="4 de 4">
+            <img src="./assets/img/carrossel/4_novasintegrantes.png" alt="#include&lt;girls&gt; recebe novas integrantes">
+            <div class="carousel-caption">
+              <h2 class="carousel-title">#include&lt;girls&gt; recebe novas integrantes</h2>
+              <p class="carousel-subtitle">Com muito prazer recebemos as novas colaboradoras do projeto!</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Seta Direita -->
+        <button type="button" class="carousel-button next" id="carousel-next" aria-label="Próximo slide">
+          <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        </button>
+
+        <!-- Bolinhas Inferiores -->
+        <div class="carousel-pagination" id="carousel-pagination" role="tablist" aria-label="Escolha o slide para exibir">
+          <button type="button" class="carousel-step active" data-slide="0" aria-label="Ir para slide 1" aria-selected="true"></button>
+          <button type="button" class="carousel-step" data-slide="1" aria-label="Ir para slide 2" aria-selected="false"></button>
+          <button type="button" class="carousel-step" data-slide="2" aria-label="Ir para slide 3" aria-selected="false"></button>
+          <button type="button" class="carousel-step" data-slide="3" aria-label="Ir para slide 4" aria-selected="false"></button>
+        </div>
+
+      </div>
+    </section>
+
+
     <!-- BOTÃO CONHEÇA O PROJETO -->
     <div class="btn-conheca">
-      <br-button id="btn-conheca" emphasis="primary">
+      <br-button id="btn-conheca" emphasis="primary" onclick="window.location.href='./pages/sobre.html'">
         Conheça o Projeto!
       </br-button>
     </div>
-
   </main>
 
   <!-- 3. RODAPÉ INSTITUCIONAL (FOOTER) -->
-
   <footer class="footer-site">
-    
-    <!-- Logo gov.br superior do rodapé -->
     <div class="footer-logo-gov">
       <a href="https://www.gov.br" target="_blank" title="Acessar portal gov.br">
-        <!-- Usa a versão branca da logo para fundo escuro -->
         <img src="./assets/img/logos/gov-br.png" alt="gov.br">
       </a>
     </div>
 
-    <!-- Grade de Links em 3 Colunas -->
     <div class="footer-grid">
-      
-      <!-- Coluna 1: Navegação Principal -->
       <div class="footer-col">
         <h4>O PROJETO</h4>
         <ul>
@@ -102,7 +257,6 @@
         </ul>
       </div>
 
-      <!-- Coluna 2: Acervo e Atividades -->
       <div class="footer-col">
         <h4>CONTEÚDO E AÇÕES</h4>
         <ul>
@@ -113,7 +267,6 @@
         </ul>
       </div>
 
-      <!-- Coluna 3: Vínculos Externos -->
       <div class="footer-col">
         <h4>INSTITUCIONAL</h4>
         <ul>
@@ -122,15 +275,12 @@
           <li><a href="https://www.gov.br/acessoainformacao/pt-br" target="_blank">Acesso à Informação</a></li>
         </ul>
       </div>
-      
-    </div>
     </div>
 
     <div class="footer-bottom">
       <div class="footer-redes-sociais">
         <p class="titulo-redes">REDES SOCIAIS</p>
         <div class="redes-icones">
-          <!-- A Font Awesome 5 utiliza 'fa-twitter' para o antigo logo do Twitter/X -->
           <a href="#" aria-label="X (Twitter)"><i class="fab fa-twitter"></i></a>
           <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -138,29 +288,139 @@
           <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
+
       <div class="footer-parceiros">
-        
-        <!-- Logos da FACOM e UFU -->
-        <a href="https://facom.ufu.br/" target="_blank" title="Acessar site da FACOM" >
+        <a href="https://facom.ufu.br/" target="_blank" title="Acessar site da FACOM">
           <img src="./assets/img/logos/facom-azul.png" alt="FACOM" style="height: 30px; margin-right: 16px;">
         </a>
-        <a href="https://ufu.br/" target="_blank" title="Acessar portal ufu.br"><img src="./assets/img/logos/ufu_blue.svg" alt="UFU" style="height: 30px;">
+        <a href="https://ufu.br/" target="_blank" title="Acessar portal ufu.br">
+          <img src="./assets/img/logos/ufu_blue.svg" alt="UFU" style="height: 30px;">
         </a>
-        <a href="https://meninas.sbc.org.br/" target="_blank" title="Acessar site meninas digitais"><img src="./assets/img/logos/meninasDigitaisLogo.png" alt="FACOM" style="height: 60px; margin-right: 16px;">
+        <a href="https://meninas.sbc.org.br/" target="_blank" title="Acessar site meninas digitais">
+          <img src="./assets/img/logos/meninasDigitaisLogo.png" alt="Meninas Digitais" style="height: 60px; margin-right: 16px;">
         </a>
       </div>
-      <!--<div>
-        <a href="https://www.gov.br/acessoainformacao/pt-br" target="_blank" style="text-decoration: none;">
-          Logo oficial do Acesso à Informação em SVG 
-          <img src="./assets/img/logos/acesso-informacao.svg" alt="Acesso à Informação" style="height: 32px;">
-        </a>
-      </div>-->
-      
     </div>
   </footer>
 
   <!-- Web Components oficiais do GovBR-DS -->
   <script type="module" src="./node_modules/@govbr-ds/webcomponents/dist/webcomponents/webcomponents.esm.js"></script>
+
+  <!-- ===================================================================
+       PONTO 3 DE COLAGEM: SCRIPT DO MENU LATERAL E DO CARROSSEL
+       (Cole logo antes da linha <script src="./assets/js/main.js"></script>)
+       =================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Controle do Menu Lateral
+      const btnAbrirMenu = document.getElementById('btn-abrir-menu');
+      const btnFecharMenu = document.getElementById('btn-fechar-menu');
+      const menuScrim = document.getElementById('menu-scrim');
+      const menuLateral = document.getElementById('main-navigation');
+
+      function abrirMenu() {
+        menuLateral.classList.add('active');
+        menuLateral.setAttribute('aria-hidden', 'false');
+        btnAbrirMenu.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function fecharMenu() {
+        menuLateral.classList.remove('active');
+        menuLateral.setAttribute('aria-hidden', 'true');
+        btnAbrirMenu.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      if (btnAbrirMenu) btnAbrirMenu.addEventListener('click', abrirMenu);
+      if (btnFecharMenu) btnFecharMenu.addEventListener('click', fecharMenu);
+      if (menuScrim) menuScrim.addEventListener('click', fecharMenu);
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && menuLateral.classList.contains('active')) {
+          fecharMenu();
+        }
+      });
+
+      // 2. Controle do Carrossel (Setas, Bolinhas e Autoplay)
+      const carousel = document.getElementById('include-carousel');
+      const stage = document.getElementById('carousel-stage');
+      const slides = Array.from(stage.querySelectorAll('.carousel-page'));
+      const btnPrev = document.getElementById('carousel-prev');
+      const btnNext = document.getElementById('carousel-next');
+      const steps = Array.from(document.querySelectorAll('.carousel-step'));
+
+      let currentIndex = 0;
+      const totalSlides = slides.length;
+      let autoplayTimer = null;
+
+      function goToSlide(index) {
+        if (index < 0) {
+          currentIndex = totalSlides - 1;
+        } else if (index >= totalSlides) {
+          currentIndex = 0;
+        } else {
+          currentIndex = index;
+        }
+
+        stage.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === currentIndex);
+        });
+
+        steps.forEach((step, i) => {
+          const isActive = i === currentIndex;
+          step.classList.toggle('active', isActive);
+          step.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+      }
+
+      function nextSlide() {
+        goToSlide(currentIndex + 1);
+      }
+
+      function prevSlide() {
+        goToSlide(currentIndex - 1);
+      }
+
+      function startAutoplay() {
+        stopAutoplay();
+        autoplayTimer = setInterval(nextSlide, 5000);
+      }
+
+      function stopAutoplay() {
+        if (autoplayTimer) {
+          clearInterval(autoplayTimer);
+          autoplayTimer = null;
+        }
+      }
+
+      btnPrev.addEventListener('click', () => {
+        prevSlide();
+        startAutoplay();
+      });
+
+      btnNext.addEventListener('click', () => {
+        nextSlide();
+        startAutoplay();
+      });
+
+      steps.forEach((step) => {
+        step.addEventListener('click', () => {
+          const targetSlide = Number(step.getAttribute('data-slide'));
+          goToSlide(targetSlide);
+          startAutoplay();
+        });
+      });
+
+      carousel.addEventListener('mouseenter', stopAutoplay);
+      carousel.addEventListener('mouseleave', startAutoplay);
+
+      startAutoplay();
+    });
+  </script>
+  <!-- FIM DO PONTO 3 DE COLAGEM -->
 
   <!-- Script da aplicação apontando para assets/js/main.js -->
   <script src="./assets/js/main.js"></script>

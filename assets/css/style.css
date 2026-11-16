@@ -5,10 +5,12 @@ body {
   color: var(--include-preto);
   margin: 0;
   /* O manual determina Arial como tipografia secundária para textos institucionais */
-  font-family: Arial, Helvetica, sans-serif; 
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Cabeçalho do Gov */
+/* =========================================================
+   1. CABEÇALHO DO GOV (BARRA BRASIL)
+   ========================================================= */
 .barra-brasil {
   background: var(--govbr-white);
   color: #ffffff;
@@ -19,7 +21,7 @@ body {
   padding: 4px 28px;
   font-size: 11px;
   font-weight: 600;
-  font-family: 'Rawline', sans-serif; 
+  font-family: 'Rawline', sans-serif;
 }
 
 .barra-brasil a {
@@ -29,10 +31,10 @@ body {
 }
 
 .logo-gov img {
-  height: 20px; 
+  height: 20px;
   display: block;
 }
-/* Container dos links superiores */
+
 .links-gov {
   display: flex;
   align-items: center;
@@ -44,38 +46,67 @@ body {
   font-size: 11px;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease;
 }
 
 .links-gov .separador {
-  color: var(--govbr-blue); 
+  color: var(--govbr-blue);
   font-size: 11px;
   transition: all 0.3s ease;
 }
+
 .links-gov:hover a,
 .links-gov:hover .separador {
   opacity: 0.3;
 }
 
-/* o link que está EXATAMENTE sob o cursor volta a ficar forte e mais escuro */
 .links-gov a:hover {
   opacity: 1;
   color: var(--govbr-blue);
 }
-/* 2. Cabeçalho do Include*/
+
+/* 2. Cabeçalho do Include + Botão Menu Lateral */
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 8px 32px;
+  background-color: #ffffff;
   border-bottom: 1px solid var(--govbr-border);
-  box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 10;
 }
 
-/* Ajuste para receber a imagem do logotipo respeitando a área de proteção */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-menu-trigger {
+  color: var(--include-roxo-escuro) !important;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-menu-trigger:hover {
+  background-color: rgba(73, 51, 100, 0.08) !important;
+}
+
 .header-logo img {
-  height: 48px; 
-  padding: 4px; /* Auxilia na área de proteção ao redor do logo */
+  height: 48px;
+  padding: 4px;
+  display: block;
 }
 
 /* Configuração do Bloco de Acessibilidade */
@@ -88,7 +119,7 @@ body {
 
 .acessibilidade-titulo {
   font-size: 14px;
-  color: var(--govbr-blue); 
+  color: var(--include-roxo-escuro);
   font-weight: 500;
   margin-right: 8px;
 }
@@ -100,7 +131,7 @@ body {
 }
 
 .acessibilidade-botoes .br-button {
-  color: var(--govbr-blue);
+  color: var(--include-roxo-escuro);
   font-weight: 500;
   border: none;
   background: transparent;
@@ -110,10 +141,201 @@ body {
 }
 
 .acessibilidade-botoes .icone-contraste i {
-  font-size: 18px; 
+  font-size: 18px;
+  color: var(--include-roxo-escuro);
 }
 
-/* 3. Área Central */
+/* Menu Lateral Esquerdo Padrão GovBR-DS (Imagem 2) */
+.br-menu.include-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  pointer-events: none;
+  visibility: hidden;
+  transition: visibility 0.3s ease;
+}
+
+.br-menu.include-menu.active {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.br-menu.include-menu .menu-scrim {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.br-menu.include-menu.active .menu-scrim {
+  opacity: 1;
+}
+
+.br-menu.include-menu .menu-panel {
+  position: relative;
+  width: 310px;
+  max-width: 85vw;
+  height: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 4px 0 16px rgba(0, 0, 0, 0.25);
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+  overflow-y: auto;
+}
+
+.br-menu.include-menu.active .menu-panel {
+  transform: translateX(0);
+}
+
+.br-menu.include-menu .menu-header {
+  padding: 20px 20px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.menu-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.menu-logo-box img {
+  height: 44px;
+  display: block;
+}
+
+.menu-close-btn {
+  background: transparent;
+  border: none;
+  color: var(--include-roxo-escuro);
+  font-size: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.menu-close-btn:hover {
+  background-color: rgba(73, 51, 100, 0.1);
+}
+
+.menu-instituicao {
+  text-align: left;
+  margin-top: 4px;
+}
+
+.menu-instituicao .titulo-ufu {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: #4a4a4a;
+  line-height: 1.25;
+}
+
+.menu-instituicao .subtitulo-facom {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: #757575;
+  margin-top: 2px;
+}
+
+.br-menu.include-menu .menu-body {
+  flex: 1;
+  padding: 8px 0;
+}
+
+.menu-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-lista li {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.menu-lista li:last-child {
+  border-bottom: none;
+}
+
+.menu-lista .menu-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 24px;
+  color: var(--include-roxo-escuro);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.menu-lista .menu-item .icon {
+  width: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: var(--include-roxo-escuro);
+}
+
+.menu-lista .menu-item:hover,
+.menu-lista .menu-item:focus {
+  background-color: rgba(73, 51, 100, 0.08);
+  color: var(--include-roxo-escuro);
+  text-decoration: none;
+}
+
+.br-menu.include-menu .menu-footer {
+  border-top: 1px solid #e6e6e6;
+  padding: 16px 24px 24px 24px;
+}
+
+.menu-footer-titulo {
+  font-size: 14px;
+  font-weight: 700;
+  color: #4a4a4a;
+  margin: 0 0 16px 0;
+  text-align: left;
+}
+
+.menu-footer-redes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.menu-footer-redes a {
+  color: var(--include-roxo-escuro);
+  font-size: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.menu-footer-redes a:hover {
+  background-color: rgba(73, 51, 100, 0.1);
+}
+
+/* 3. Área Central + Carrossel GovBR-DS */
 .main-content {
   max-width: 1040px;
   margin: 0 auto;
@@ -130,36 +352,181 @@ body {
 
 .menu-secundario {
   display: flex;
-  justify-content: center; 
-  flex-wrap: wrap; 
-  gap: 46px; /* Espaço entre os botões */
- 
-  margin-bottom: 40px; /* Afasta o menu do título que vem a seguir */
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 36px;
   padding-top: 16px;
 }
 
 .botao-delineado {
   display: inline-block;
   padding: 6px 20px;
-  color: var(--include-roxo-escuro); 
-  background-color: #ffffff; /* Fundo branco */
-  border: 1px solid var(--include-roxo-escuro); /* Borda fina azul escura */
-    border-radius: 8px; 
-    font-size: 16px;
-    text-decoration:none!important;
-    transition: all 0.2s ease; 
+  color: var(--include-roxo-escuro);
+  background-color: #ffffff;
+  border: 1px solid var(--include-roxo-escuro);
+  border-radius: 8px;
+  font-size: 16px;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
 }
 
-/* Efeito ao passar o rato (Hover) */
 .botao-delineado:hover {
   background-color: var(--include-roxo-escuro);
   color: #ffffff;
-  text-decoration:none!important;
+  text-decoration: none !important;
 }
 
-/* Botão Central com o Roxo  */
+/* Carrossel */
+.carrossel-section {
+  max-width: 960px;
+  margin: 0 auto 40px auto;
+}
+
+.include-carousel {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--include-roxo-escuro);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  user-select: none;
+}
+
+.include-carousel .carousel-stage {
+  display: flex !important;
+  flex-direction: row !important;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.55s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.include-carousel .carousel-page {
+  flex: 0 0 100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  position: relative !important;
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--include-roxo-escuro);
+  overflow: hidden;
+}
+
+.include-carousel .carousel-page img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.include-carousel .carousel-caption {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    to top,
+    rgba(12, 8, 18, 0.92) 0%,
+    rgba(12, 8, 18, 0.45) 30%,
+    rgba(12, 8, 18, 0) 58%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  text-align: left;
+  padding: 28px 36px 50px 36px;
+  pointer-events: none;
+}
+
+.include-carousel .carousel-title {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+  line-height: 1.2;
+  font-family: 'Rawline', Arial, sans-serif;
+}
+
+.include-carousel .carousel-subtitle {
+  color: #f0eef4;
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Setas laterais circulares (< e >) */
+.include-carousel .carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(24, 18, 34, 0.78);
+  color: #ffffff;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.include-carousel .carousel-button:hover {
+  background-color: var(--include-magenta);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.include-carousel .carousel-button.prev {
+  left: 16px;
+}
+
+.include-carousel .carousel-button.next {
+  right: 16px;
+}
+
+/* Bolinhas de paginação inferiores */
+.include-carousel .carousel-pagination {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.include-carousel .carousel-step {
+  width: 11px;
+  height: 11px;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.include-carousel .carousel-step:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.include-carousel .carousel-step.active {
+  background-color: #ffffff;
+  transform: scale(1.2);
+}
+
+/* Botão Central com o Roxo */
 .btn-conheca {
-  margin-top: 48px;
+  margin-top: 32px;
 }
 
 .btn-conheca br-button::part(button) {
@@ -173,13 +540,14 @@ body {
   font-family: Arial, Helvetica, sans-serif !important;
 }
 
-/* Hover do botão */
 .btn-conheca br-button::part(button):hover {
   background-color: var(--include-magenta) !important;
   border-color: var(--include-magenta) !important;
 }
 
-/* Rodapé */
+/* =========================================================
+   5. RODAPÉ INSTITUCIONAL
+   ========================================================= */
 .footer-site {
   border-top: 1px solid var(--govbr-border);
   padding: 48px 32px 24px 32px;
@@ -189,19 +557,18 @@ body {
 
 .footer-logo-gov {
   max-width: 1100px;
-  margin: 0 auto 12px auto; /* Margem inferior para afastar a logo das colunas */
+  margin: 0 auto 12px auto;
 }
 
 .footer-logo-gov img {
   height: 36px;
 }
 
-/* Divide o espaço em 3 colunas iguais */
 .footer-grid {
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   text-align: left;
 }
@@ -209,28 +576,37 @@ body {
 .footer-col h4 {
   font-size: 14px;
   font-weight: bold;
-  color:var(--include-preto); /* Título em branco */
+  color: var(--include-preto);
   text-transform: uppercase;
   margin-bottom: 16px;
 }
 
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+}
 
 .footer-col ul li a {
-  color: var(--include-preto); /* Cor do link */
+  color: var(--include-preto);
   text-decoration: none !important;
 }
 
 .footer-col ul li a:hover {
   text-decoration: none !important;
-  color:var(--include-roxo-escuro)
+  color: var(--include-roxo-escuro);
 }
 
 .footer-bottom {
   max-width: 1100px;
   margin: 40px auto 0 auto;
   display: flex;
-  justify-content: space-between; /* Empurra as redes para a esquerda e as logos para a direita */
-  align-items: flex-end; /* Alinha todos os elementos pela base */
+  justify-content: space-between;
+  align-items: flex-end;
   flex-wrap: wrap;
   gap: 24px;
   padding-top: 24px;
@@ -238,16 +614,17 @@ body {
 }
 
 .footer-parceiros {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
+
 .footer-parceiros img {
-  height: 36px; 
+  height: 36px;
   width: auto;
-  object-fit: contain; 
+  object-fit: contain;
 }
+
 .footer-redes-sociais {
   display: flex;
   flex-direction: column;
@@ -261,12 +638,12 @@ body {
   margin: 0;
   text-transform: uppercase;
 }
+
 .redes-icones {
   display: flex;
   gap: 10px;
 }
 
-/* Estilo dos ícones circulares */
 .redes-icones a {
   display: flex;
   align-items: center;
@@ -274,8 +651,8 @@ body {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background-color: var(--include-cinza-claro); /* Fundo do círculo */
-  color: #ffffff; /* Cor do ícone */
+  background-color: var(--include-cinza-claro);
+  color: #ffffff;
   text-decoration: none;
   font-size: 18px;
   transition: opacity 0.2s ease;
@@ -284,7 +661,8 @@ body {
 .redes-icones a:hover {
   opacity: 0.8;
 }
-/*remove efeito hover onde é desnecessario*/
+
+/* Remove efeito hover onde é desnecessário */
 .barra-brasil a:hover,
 .header-logo a:hover,
 .acessibilidade-botoes .br-button:hover,
@@ -292,4 +670,33 @@ body {
 .footer-logo-gov a:hover {
   background-image: none !important;
   background-color: transparent !important;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 8px 16px;
+  }
+  .include-carousel {
+    height: 340px; }
+
+  .carousel-slide-item {
+    height: 340px;
+  }
+
+  .carousel-slide-titulo {
+    font-size: 20px;
+  }
+
+  .carousel-slide-subtitulo {
+    font-size: 13px;
+  }
+
+  .carousel-slide-overlay {
+    padding: 20px 20px 42px 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
 }
