@@ -21,4 +21,11 @@
   --interactive-dark: var(--include-roxo-escuro-hover);
   --interactive-light: #f3eff7;
   --color: var(--include-preto);
+
+  /* Tokens do Quadro Composição Feminina (GovBR-DS Surface / Card) */
+  --surface-card-bg: #ffffff;
+  --surface-card-border: #eeeeee;
+  --surface-card-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  --surface-card-radius: 6px;
+  --font-family-base: 'Rawline', Arial, Helvetica, sans-serif;
 }
