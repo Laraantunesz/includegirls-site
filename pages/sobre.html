@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Nós | #include&lt;girls&gt;</title>
+
+  <!-- Tipografia Rawline mantida apenas para os Web Components do GovBR-DS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rawline:wght@400;500;600;700&display=swap">
+  <!-- Font Awesome para os ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- CSS Base do GovBR-DS -->
+  <link rel="stylesheet" href="./node_modules/@govbr-ds/core/dist/core.min.css">
+
+  <!-- 1. Estilos Globais (Header, Footer, Variáveis) -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <!-- 2. Estilo Específico desta página -->
+  <link rel="stylesheet" href="../assets/css/sobre.css">
+</head>
+<body>
+
+  <!-- 1. BARRA BRASIL (GOV.BR) -->
+  <header class="barra-brasil">
+    <div class="logo-gov">
+      <a href="https://www.gov.br" target="_blank" title="Acessar portal gov.br">
+        <img src="../assets/img/logos/gov-br.png" alt="gov.br" style="height: 24px;">
+      </a>
+    </div>
+    <nav class="links-gov" aria-label="Acesso rápido gov.br">
+      <a href="https://www.gov.br/pt-br/orgaos-do-governo" target="_blank">ÓRGÃOS DO GOVERNO</a>
+      <span class="separador">|</span>
+      <a href="https://www.gov.br/acessoainformacao/pt-br" target="_blank">ACESSO À INFORMAÇÃO</a>
+      <span class="separador">|</span>
+      <a href="https://www.gov.br/governodigital/pt-br/legislacao" target="_blank">LEGISLAÇÃO</a>
+    </nav>
+  </header>
+
+  <!-- ===================================================================
+        CABEÇALHO + MENU LATERAL
+       =================================================================== -->
+  <div class="header-container">
+    <div class="header-left">
+      <button
+        type="button"
+        class="br-button circle small btn-menu-trigger"
+        id="btn-abrir-menu"
+        aria-label="Abrir menu principal"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+
+      <div class="header-logo">
+        <a href="../index.html">
+          <img src="../assets/img/logos-include/include-completo-roxo.svg" alt="Logotipo Oficial do Projeto Include Girls" style="height: 48px;">
+        </a>
+      </div>
+    </div>
+
+    <!-- Controles de Acessibilidade -->
+    <div class="header-actions">
+      <div class="acessibilidade-titulo">Acessibilidade</div>
+      <div class="acessibilidade-botoes">
+        <button type="button" class="br-button circle small" aria-label="Diminuir fonte">A-</button>
+        <button type="button" class="br-button circle small" aria-label="Fonte normal">A</button>
+        <button type="button" class="br-button circle small" aria-label="Aumentar fonte">A+</button>
+        <button type="button" class="br-button circle small icone-contraste" aria-label="Alto contraste">
+          <i class="fas fa-adjust" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MENU LATERAL ESQUERDO -->
+  <div class="br-menu include-menu" id="main-navigation" aria-hidden="true">
+    <div class="menu-scrim" id="menu-scrim"></div>
+
+    <div class="menu-panel" role="dialog" aria-modal="true" aria-label="Menu de navegação principal">
+      <div>
+        <div class="menu-header">
+          <div class="menu-header-top">
+            <div class="menu-logo-box">
+              <img src="../assets/img/logos-include/include-completo-roxo.svg" alt="Logo #include<girls>">
+            </div>
+            <button type="button" class="menu-close-btn" id="btn-fechar-menu" aria-label="Fechar menu">
+              <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <div class="menu-instituicao">
+            <span class="titulo-ufu">Universidade Federal de Uberlândia</span>
+            <span class="subtitulo-facom">Faculdade de Computação</span>
+          </div>
+        </div>
+
+        <nav class="menu-body" aria-label="Menu lateral">
+          <ul class="menu-lista">
+            <li>
+              <a class="menu-item" href="../index.html">
+                <span class="icon"><i class="fas fa-home" aria-hidden="true"></i></span>
+                <span class="content">Início</span>
+              </a>
+            </li>
+            <li>
+              <a class="menu-item" href="../pages/projetos.html">
+                <span class="icon"><i class="fas fa-female" aria-hidden="true"></i></span>
+                <span class="content">Projetos</span>
+              </a>
+            </li>
+            <li>
+              <a class="menu-item" href="../pages/publicacoes.html">
+                <span class="icon"><i class="fas fa-file-alt" aria-hidden="true"></i></span>
+                <span class="content">Publicações</span>
+              </a>
+            </li>
+            <li>
+              <a class="menu-item" href="../pages/premiacoes.html">
+                <span class="icon"><i class="fas fa-trophy" aria-hidden="true"></i></span>
+                <span class="content">Premiações</span>
+              </a>
+            </li>
+            <li>
+              <a class="menu-item" href="../pages/material.html">
+                <span class="icon"><i class="fas fa-folder" aria-hidden="true"></i></span>
+                <span class="content">Material</span>
+              </a>
+            </li>
+            <li>
+              <a class="menu-item" href="../pages/sobre.html">
+                <span class="icon"><i class="fas fa-info-circle" aria-hidden="true"></i></span>
+                <span class="content">Sobre</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="menu-footer">
+        <p class="menu-footer-titulo">Redes Sociais</p>
+        <div class="menu-footer-redes">
+          <a href="https://www.instagram.com/includegirls.ufu/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.facebook.com/includegirls.ufu/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="container-alinhamento main-sobre">
+    
+    <!-- Breadcrumb (Caminho de navegação) -->
+    <div class="breadcrumb">
+      <a href="../index.html"><i class="fas fa-home"></i></a> <span class="separador">></span> Sobre Nós
+    </div>
+
+    <!-- Título Principal e Introdução -->
+    <section class="intro-sobre">
+      <h1 class="titulo-destaque">Sobre o #include&lt;girls&gt;</h1>
+      <p>
+        O #include&lt;girls&gt; é um projeto de extensão da Faculdade de Computação (FACOM) da Universidade Federal de Uberlândia (UFU).
+        Acreditamos que a tecnologia é um espaço para todos e trabalhamos para que a representatividade feminina seja uma realidade nas salas de aula e no mercado de trabalho.
+      </p>
+    </section>
+
+    <!-- Cards Grandes: História e Missão -->
+    <section class="cards-missao-grid">
+      <div class="card-grande">
+        <i class="fas fa-landmark icone-card"></i>
+        <h2>Nossa História</h2>
+        <p>Nascemos da urgência de transformar nossa realidade e combater a baixa representação feminina na faculdade. Demos os primeiros passos escolhendo nosso nome junto à comunidade estudantil e nos consolidamos como um verdadeiro espaço de acolhimento durante o evento "I Meninas na Computação", unindo forças entre professoras e alunas.</p>
+      </div>
+
+      <div class="card-grande">
+        <i class="fas fa-bullseye icone-card"></i>
+        <h2>Nossa Missão</h2>
+        <p>Nossa missão é estimular o ingresso de meninas do ensino médio de escolas públicas de Uberlândia e região no ensino superior nas áreas de Tecnologia da Informação.
+    Para quem já está na universidade, atuamos no combate à evasão de alunas dos cursos promovendo projetos de ensino, como monitorias e tutorias, que aproximam as estudantes das professoras 
+    da instituição logo no início da jornada acadêmica.
+    Além disso, buscamos dar visibilidade ao tema fomentando discussões sobre desafios e oportunidades para mulheres na TI através das nossas redes sociais.</p>
+      </div>
+    </section>
+
+    <!-- Cards de Equipe (Coordenação) -->
+    <section class="secao-equipe">
+      <h2 class="titulo-secao">Equipe Docente & Coordenação</h2>
+      <div class="cards-equipe-grid">
+        <!-- 1 Card de Exemplo para Coordenação -->
+        <div class="card-perfil">
+          <img src="../assets/img/fotos-sobrenos/icone-perfil.jfif" alt="Foto da Coordenadora" class="foto-perfil">
+          <h3>Maria Camila Nardini</h3>
+          <span class="cargo">COORDENAÇÃO</span>
+        </div>
+        <div class="card-perfil">
+          <img src="../assets/img/fotos-sobrenos/icone-perfil.jfif" alt="Foto da Coordenadora" class="foto-perfil">
+          <h3>Alessandra Aparecida</h3>
+          <span class="cargo">COORDENAÇÃO</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cards de Desenvolvedores -->
+    <section class="secao-equipe">
+      <h2 class="titulo-secao">Desenvolvedores</h2>
+      <p class="subtitulo-equipe">Equipe técnica responsável pela implementação e manutenção do site.</p>
+      
+      <div class="cards-equipe-grid">
+        <!-- 1 Card de Exemplo para Desenvolvedora -->
+        <div class="card-perfil">
+          <div class="foto-iniciais">LZ</div> <!-- Usando iniciais na imagem para quem não tem foto -->
+          <h3>Lara Zuleika Antunes Silva</h3>
+          <span class="cargo">DESENVOLVEDORA FRONT-END</span>
+          <a href="https://github.com/Laraantunesz" target="_blank" class="btn-github">
+            <i class="fab fa-github"></i> GitHub 
+          </a>
+        </div>
+        <div class="card-perfil">
+          <div class="foto-iniciais">AC</div> <!-- Usando iniciais na imagem para quem não tem foto -->
+          <h3>Aila Carvalho Resende</h3>
+          <span class="cargo">DESENVOLVEDORA FRONT-END</span>
+          <a href="https://github.com/aliacarval" target="_blank" class="btn-github">
+            <i class="fab fa-github"></i> GitHub 
+          </a>
+        </div>
+        <div class="card-perfil">
+          <div class="foto-iniciais">TL</div> <!-- Usando iniciais na imagem para quem não tem foto -->
+          <h3>Tafiny Lis Moura Silva</h3>
+          <span class="cargo">DESENVOLVEDORA FRONT-END</span>
+          <a href="https://github.com/tlismoura" target="_blank" class="btn-github">
+            <i class="fab fa-github"></i> GitHub 
+          </a>
+        </div>
+        <div class="card-perfil">
+          <div class="foto-iniciais">ME</div> <!-- Usando iniciais na imagem para quem não tem foto -->
+          <h3>Maria Eduarda Machado Alves</h3>
+          <span class="cargo">DESIGN</span>
+          <a href="https://github.com/Laraantunesz" target="_blank" class="btn-github">
+            <i class="fab fa-github"></i> GitHub 
+          </a>
+        </div>
+        
+      </div>
+      
+    </section>
+
+  </main>
+
+  
+
+  <!-- 3. RODAPÉ INSTITUCIONAL (FOOTER) -->
+  <footer class="footer-site">
+    <div class="footer-logo-gov">
+      <a href="https://www.gov.br" target="_blank" title="Acessar portal gov.br">
+        <img src="../assets/img/logos/gov-br.png" alt="gov.br">
+      </a>
+    </div>
+
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>O PROJETO</h4>
+        <ul>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="../pages/sobre.html">Sobre Nós</a></li>
+          <li><a href="../pages/projetos.html">Nossos Projetos</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>CONTEÚDO E AÇÕES</h4>
+        <ul>
+          <li><a href="../pages/eventos.html">Eventos</a></li>
+          <li><a href="../pages/material.html">Materiais</a></li>
+          <li><a href="../pages/publicacoes.html">Publicações</a></li>
+          <li><a href="../pages/premiacoes.html">Premiações</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>INSTITUCIONAL</h4>
+        <ul>
+          <li><a href="https://facom.ufu.br/" target="_blank">FACOM - UFU</a></li>
+          <li><a href="https://ufu.br/" target="_blank">Universidade Federal de Uberlândia</a></li>
+          <li><a href="https://www.gov.br/acessoainformacao/pt-br" target="_blank">Acesso à Informação</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-redes-sociais">
+        <p class="titulo-redes">REDES SOCIAIS</p>
+        <div class="redes-icones">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+
+        </div>
+      </div>
+
+      <div class="footer-parceiros">
+        <a href="https://facom.ufu.br/" target="_blank" title="Acessar site da FACOM">
+          <img src="../assets/img/logos/facom-azul.png" alt="FACOM" style="height: 30px; margin-right: 16px;">
+        </a>
+        <a href="https://ufu.br/" target="_blank" title="Acessar portal ufu.br">
+          <img src="../assets/img/logos/ufu_blue.svg" alt="UFU" style="height: 30px;">
+        </a>
+        <a href="https://meninas.sbc.org.br/" target="_blank" title="Acessar site meninas digitais">
+          <img src="../assets/img/logos/meninasDigitaisLogo.png" alt="Meninas Digitais" style="height: 60px; margin-right: 16px;">
+        </a>
+      </div>
+    </div>
+  </footer>
+
