@@ -1,0 +1,194 @@
+/* ======================================================= */
+/* PÁGINA: SOBRE NÓS                                       */
+/* ======================================================= */
+
+.main-sobre {
+  padding: 40px 32px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.breadcrumb a {
+  color: var(--govbr-blue-dark);
+  text-decoration: none;
+}
+
+.breadcrumb .separador {
+  margin: 0 8px;
+  color: #999;
+}
+
+/* Títulos e Introdução */
+.intro-sobre {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+}
+
+.titulo-destaque {
+  color: #493364; /* Roxo principal do projeto */
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Cria o sublinhado centralizado sob o título principal */
+.titulo-destaque::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #493364; 
+}
+
+.intro-sobre p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  text-align: justify;
+}
+
+/* Grid: História e Missão */
+.cards-missao-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 42px;
+  margin-bottom: 64px;
+  max-width: 960px; 
+  margin: 0 auto 64px auto;/*garante qeu os blocos fiqeum centralizados*/
+}
+
+.card-grande {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 40px 32px;
+  text-align: center;
+  box-shadow: 0 4px 12px var(--include-roxo-escuro); /* Sombra bem leve */
+  border-top: 4px solid #493364; /* Linha roxa no topo */
+}
+
+.card-grande .icone-card {
+  font-size: 24px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.card-grande h2 {
+  color: #493364;
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.card-grande p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+  text-align: justify;
+}
+
+/* Grid: Equipe e Desenvolvedores */
+.secao-equipe {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.titulo-secao {
+  color: #493364;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.subtitulo-equipe {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 32px;
+}
+
+.cards-equipe-grid {
+  display: flex;
+  justify-content: center; 
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.card-perfil {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 32px 24px;
+  width: 260px; /* Largura fixa do quadradinho */
+  text-align: center;
+  box-shadow: 0 2px 8px var(--include-rosa-claro);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #eaeaea;
+}
+
+/* Fotos e Iniciais Redondas */
+.foto-perfil {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.foto-iniciais {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--include-roxo-escuro);
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.card-perfil h3 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.card-perfil .cargo {
+  font-size: 11px;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+/* Botão do GitHub do Desenvolvedor */
+.btn-github {
+  background-color: #24292e;
+  color: #ffffff;
+  padding: 8px 0;
+  width: 100%;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+}
+
+.btn-github:hover {
+  background-color: #000000;
+  color: #ffffff;
+}

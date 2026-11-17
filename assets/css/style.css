@@ -309,6 +309,7 @@ body {
   color: #4a4a4a;
   margin: 0 0 16px 0;
   text-align: left;
+ 
 }
 
 .menu-footer-redes {
@@ -316,10 +317,13 @@ body {
   justify-content: center;
   align-items: center;
   gap: 32px;
+ 
+
 }
 
 .menu-footer-redes a {
   color: var(--include-roxo-escuro);
+  
   font-size: 18px;
   width: 36px;
   height: 36px;
@@ -835,7 +839,8 @@ body {
 .header-logo a:hover,
 .acessibilidade-botoes .br-button:hover,
 .footer-col ul li a:hover,
-.footer-logo-gov a:hover {
+.footer-logo-gov a:hover,
+.footer-parceiros a:hover {
   background-image: none !important;
   background-color: transparent !important;
 }
